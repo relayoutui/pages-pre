@@ -1,0 +1,158 @@
+/* The home page's own rules, on top of relayout.css, pages-base.css and brand.css. Layout is Relayout's classes in
+   the markup; what is here is what they don't cover. */
+
+/* ── Narrow screens ──
+   Below 350px the page keeps its width and scrolls sideways, in place of squeezing the demo's title bar, its tabs and
+   the icon row further. The fixed header is as wide as the window and has room. */
+body > main,
+body > footer {
+    min-width: 350px;
+}
+
+/* The hero's line is longer than the 40rem the base gives a section's text, and runs on one line while it fits */
+.section-hero .section-body {
+    max-width: 46rem;
+}
+
+/* ── The hero's two tones ──
+   The icons are the focus, in the full text colour. The title, the four names and the line under them share one
+   step down, --hero-soft: the text colour mixed 60% with the page's background, so it steps down the same way in
+   light and in dark. Measured 2026-11-09 on the hero's wash: dark 5.3, light 4.9, both over the 4.5:1 that text
+   asks for (pages-base.css, the Accessibility target). The magenta stays on the Documentation button. */
+.section-hero {
+    --hero-soft: color-mix(in oklab, var(--text) 60%, var(--bg));
+}
+
+.section-hero .hero-title,
+.section-hero .section-body {
+    color: var(--hero-soft);
+}
+
+/* ── The four layouts ──
+   The icons. The list's own bullets and indent go; the row is Relayout's class. */
+.layout-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* The icons shrink on a narrow screen so the four stay on one line */
+.layout-icons svg {
+    width: min(4rem, 12vw);
+    height: auto;
+    color: var(--text);
+}
+
+/* ── Layout demo ──
+   The page's half of <relayout-demo> (assets/js/demo.js): the buttons, the source view and the hint. The preset
+   itself is styled inside its shadow root, by demo-preset.css. */
+/* The frame (inside the shadow root, demo-preset.css) and the source view read the same height, so the toggle swaps
+   one for the other in place */
+relayout-demo {
+    --demo-height: 32rem;
+    display: block;
+}
+
+/* The presets are a made-up site, Acme, so they have an accent of their own: a blue, so the demo isn't a second copy
+   of the page's pink. Same three roles as brand.css, measured 2026-10-22 on the surfaces a preset uses (bg · bg-alt ·
+   bg-elev · bg-chrome), and on the 14% and 16% tints of the accent that the active link and the badge sit on:
+
+       --demo-accent       3:1 as a graphic: light 4.85 · 4.56 · 5.17 · 5.17, dark 4.45 · 4.74 · 4.13 · 4.98
+       --demo-accent-text  4.5:1 as text: light #1d4ed8 6.29 · 5.92 · 6.70 · 6.70, dark #6ea8fe 6.77 · 7.22 · 6.28 · 7.58
+       --demo-accent-on    4.5:1 against the fill: light #ffffff 5.17, dark #06142e 4.98
+
+   The hero's muted line sits on a wash of the accent: at its full 20%, light 5.59, dark 4.60. */
+relayout-demo {
+    --demo-accent: #2563eb;
+    --demo-accent-text: #1d4ed8;
+    --demo-accent-on: #ffffff;
+}
+
+[data-theme="dark"] relayout-demo {
+    --demo-accent: #3b82f6;
+    --demo-accent-text: #6ea8fe;
+    --demo-accent-on: #06142e;
+}
+
+/* ── The window ──
+   Round the preview and the source, so the demo reads as a demo and not as part of the page: a title bar with
+   window dots, the preset as a file name and a Live demo badge (pages-base.css's code window title bar and badge),
+   over a recessed body that shows beside a narrowed frame. The code window's border, corners and shadow. */
+.demo-window {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-alt);
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.1), 0 8px 16px -4px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .demo-window {
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* Decoration, in the colours windows use for them */
+.demo-window .code-dot:nth-child(1) {
+    background: #ff5f57;
+}
+
+.demo-window .code-dot:nth-child(2) {
+    background: #febc2e;
+}
+
+.demo-window .code-dot:nth-child(3) {
+    background: #28c840;
+}
+
+.demo-window .badge {
+    padding: 1px 8px;
+    font-size: 0.75rem;
+}
+
+/* The chosen preset and view, in the brand's tone, as the Documentation button is at rest */
+relayout-demo .btn[aria-pressed="true"] {
+    border-color: color-mix(in oklab, var(--brand) 50%, var(--border));
+    color: var(--brand-text);
+}
+
+/* Hidden until the preset's styles have loaded, so it never shows unstyled. It keeps its height meanwhile. */
+.demo-stage.is-loading {
+    visibility: hidden;
+}
+
+/* The padding counts inside the height, so it matches the frame's */
+.demo-source {
+    box-sizing: border-box;
+    height: var(--demo-height);
+    margin: 0;
+    overflow: auto;
+    background: var(--bg-elev);
+}
+
+/* pages-base.css draws inline code as a chip; a block of source is one piece of text */
+.demo-source code {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: inherit;
+}
+
+/* One line under either view, its text set by demo.js, so it holds its place when the view changes */
+.demo-hint {
+    margin: 0;
+    color: var(--text-subtle);
+    font-size: 0.8125rem;
+    text-align: center;
+}
+
+/* A touch screen has no corner to drag. The line keeps its space, so the page still holds still. */
+@media (hover: none), (pointer: coarse) {
+    .demo-hint[data-view="preview"] {
+        visibility: hidden;
+    }
+}
+
+/* ── Highlights ──
+   A class name or an element is read whole, so a chip doesn't break at its hyphens */
+.doc-card-body code {
+    white-space: nowrap;
+}

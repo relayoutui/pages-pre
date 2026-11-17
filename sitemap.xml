@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://relayout.net/</loc></url>
+  <url><loc>https://relayout.net/docs/</loc></url>
+  <url><loc>https://relayout.net/docs/changelog/</loc></url>
+  <url><loc>https://relayout.net/docs/composition/</loc></url>
+  <url><loc>https://relayout.net/docs/existing-projects/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/border/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/divider/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/fonts/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/outline/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/palette/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/radius/</loc></url>
+  <url><loc>https://relayout.net/docs/extras/shadows/</loc></url>
+  <url><loc>https://relayout.net/docs/frameworks/</loc></url>
+  <url><loc>https://relayout.net/docs/install/</loc></url>
+  <url><loc>https://relayout.net/docs/introduction/</loc></url>
+  <url><loc>https://relayout.net/docs/layouts/column/</loc></url>
+  <url><loc>https://relayout.net/docs/layouts/frame/</loc></url>
+  <url><loc>https://relayout.net/docs/layouts/grid/</loc></url>
+  <url><loc>https://relayout.net/docs/layouts/row/</loc></url>
+  <url><loc>https://relayout.net/docs/reference/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/align/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/gap/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/height/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/justify/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/padding/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/sticky/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/width/</loc></url>
+  <url><loc>https://relayout.net/docs/utilities/wrapping/</loc></url>
+  <url><loc>https://relayout.net/docs/web-components/</loc></url>
+</urlset>

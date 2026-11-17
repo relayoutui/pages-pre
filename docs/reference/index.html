@@ -1,0 +1,1391 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Relayout reference: every class and variable</title><link rel="canonical" href="https://relayout.net/docs/reference/"/><link rel="sitemap" href="/docs/sitemap-index.xml"/><script defer src="/assets/js/analytics.js" data-client-id="10c1bcc4-c86e-4a42-bbe8-6fa13e689b41"></script><link rel="shortcut icon" href="/docs/favicon.ico" type="image/x-icon"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:type" content="article"/><meta property="og:url" content="https://relayout.net/docs/reference/"/><meta property="og:locale" content="en"/><meta property="og:description" content="Every class Relayout 0.8.0 ships, what each sets and the variable it reads, and every custom property with its default, light and dark."/><meta property="og:site_name" content="Relayout Docs"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Every class Relayout 0.8.0 ships, what each sets and the variable it reads, and every custom property with its default, light and dark."/><meta property="og:title" content="Relayout reference: every class and variable"/><script type="module" src="/docs/_astro/head.astro_astro_type_script_index_0_lang.IVKjacap.js"></script><script>(function(){const storageKey = "cs-theme";
+
+    let theme = 'dark';
+    try
+    {
+        const cookie = document.cookie.split('; ').find(c => c.startsWith(`${storageKey}=`))?.split('=')[1];
+        if ((cookie ?? localStorage.getItem(storageKey)) === 'light') theme = 'light';
+    }
+    catch { /* storage blocked: the page stays dark */ }
+    document.documentElement.dataset.theme = theme;
+})();</script><link rel="stylesheet" href="/docs/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/docs/_astro/common.Bc2jD8QA.css"><style>@layer starlight.components{.card-grid:where(.astro-7qmvx3iy){grid-template-columns:100%;gap:1rem;display:grid}.card-grid:where(.astro-7qmvx3iy)>*{margin-top:0!important}@media (width>=50rem){.card-grid:where(.astro-7qmvx3iy){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-7qmvx3iy){--stagger-height:5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-7qmvx3iy)>:nth-child(2n){transform:translateY(var(--stagger-height))}}.sl-link-card:where(.astro-zaaezwya){border:1px solid var(--sl-color-gray-5);box-shadow:var(--sl-shadow-sm);border-radius:.5rem;grid-template-columns:1fr auto;gap:.5rem;padding:1rem;display:grid;position:relative}a:where(.astro-zaaezwya){line-height:var(--sl-line-height-headings);text-decoration:none}a:where(.astro-zaaezwya):before{content:"";position:absolute;inset:0}.stack:where(.astro-zaaezwya){flex-direction:column;gap:.5rem}.title:where(.astro-zaaezwya){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-zaaezwya){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-zaaezwya){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-zaaezwya):hover{background:var(--sl-color-gray-7,var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-zaaezwya):hover .icon:where(.astro-zaaezwya){color:var(--sl-color-white)}}
+@layer starlight.components{svg:where(.astro-hkc32dio){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/docs/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="header astro-by6fddyj"><div class="title-wrapper sl-flex astro-by6fddyj"><div class="brand astro-4lmnf4sk"><a href="/" class="site-title astro-4lmnf4sk"><img src="/docs/_astro/relayout-mark.B4-rAPE-.svg" width="131" height="131" alt="" class="astro-4lmnf4sk"><span class="word astro-4lmnf4sk" translate="no">Relayout</span></a><a href="/docs/" class="label astro-4lmnf4sk">Docs</a><span class="stamp astro-4lmnf4sk" title="Docs for Relayout 0.8.0, the version the examples run. Docs revision r1117.2">v0.8.0<span class="rev astro-4lmnf4sk">-r1117.2</span></span></div></div><div class="sl-flex print:hidden astro-by6fddyj"><site-search class="astro-by6fddyj astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/docs/_astro/Search.astro_astro_type_script_index_0_lang.DrbjDjUC.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-by6fddyj"><div class="sl-flex social-icons astro-by6fddyj"><relayout-social-links class="astro-v67oa6tq"><a href="https://github.com/relayoutui/relayout" title="GitHub" target="_blank" rel="noopener noreferrer" class="astro-v67oa6tq"><span class="sr-only astro-v67oa6tq">GitHub</span><svg aria-hidden="true" class="mark astro-v67oa6tq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://www.npmjs.com/package/@relayoutui/relayout" title="npm" target="_blank" rel="noopener noreferrer" class="astro-v67oa6tq"><span class="sr-only astro-v67oa6tq">npm</span><svg aria-hidden="true" class="mark astro-v67oa6tq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M1.76 0h20.48a1.76 1.76 0 0 1 1.76 1.76v20.48a1.76 1.76 0 0 1-1.76 1.76H1.76A1.76 1.76 0 0 1 0 22.24V1.76A1.76 1.76 0 0 1 1.76 0zM5.11 19.16h6.93V8.8h3.47v10.36h3.47V5.34H5.13v13.82z"></path></svg></a></relayout-social-links></div><relayout-theme-toggle class="astro-6kgiinfj"><button type="button" aria-label="Toggle theme" title="Toggle theme" class="astro-6kgiinfj"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" class="astro-6kgiinfj"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,16.37a86.4,86.4,0,0,1,16,3V212.67a86.4,86.4,0,0,1-16,3Zm32,9.26a87.81,87.81,0,0,1,16,10.54V195.83a87.81,87.81,0,0,1-16,10.54ZM40,128a88.11,88.11,0,0,1,80-87.63V215.63A88.11,88.11,0,0,1,40,128Zm160,50.54V77.46a87.82,87.82,0,0,1,0,101.08Z" class="astro-6kgiinfj"></path></svg></button></relayout-theme-toggle><script type="module">var e=`cs-theme`,t=class extends HTMLElement{connectedCallback(){this.querySelector(`button`)?.addEventListener(`click`,()=>{let t=document.documentElement.dataset.theme===`dark`?`light`:`dark`;document.documentElement.dataset.theme=t;try{localStorage.setItem(e,t),document.cookie=`${e}=${t}; max-age=31536000; path=/; SameSite=Lax`}catch{}})}};customElements.define(`relayout-theme-toggle`,t);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div><p class="notice astro-4oan7hod">Relayout is pre-release. Class names can change between releases.</p></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="03vznev" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Getting Started</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/docs/introduction/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Introduction</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/install/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Installation</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/web-components/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Web components</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/frameworks/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Frameworks</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/composition/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Composition</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/existing-projects/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Existing projects</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Layouts</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/docs/layouts/column/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Column</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/layouts/row/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Row</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/layouts/grid/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Grid</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/layouts/frame/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Frame</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Utilities</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/docs/utilities/gap/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Gap</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/align/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Align</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/justify/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Justify</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/padding/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Padding</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/wrapping/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Wrapping</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/width/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Width</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/height/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Height, fill and scroll</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/utilities/sticky/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Sticky</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Extras</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/docs/extras/border/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Border</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/radius/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Radius</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/divider/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Divider</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/palette/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Palette</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/fonts/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Fonts</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/shadows/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Shadows</span></a></li><li class="astro-rmhv4bp6"><a href="/docs/extras/outline/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Outline</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/docs/reference/" aria-current="page" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Reference</span></a></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><relayout-social-links class="astro-v67oa6tq"><a href="https://github.com/relayoutui/relayout" title="GitHub" target="_blank" rel="noopener noreferrer" class="astro-v67oa6tq"><span class="sr-only astro-v67oa6tq">GitHub</span><svg aria-hidden="true" class="mark astro-v67oa6tq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://www.npmjs.com/package/@relayoutui/relayout" title="npm" target="_blank" rel="noopener noreferrer" class="astro-v67oa6tq"><span class="sr-only astro-v67oa6tq">npm</span><svg aria-hidden="true" class="mark astro-v67oa6tq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M1.76 0h20.48a1.76 1.76 0 0 1 1.76 1.76v20.48a1.76 1.76 0 0 1-1.76 1.76H1.76A1.76 1.76 0 0 1 0 22.24V1.76A1.76 1.76 0 0 1 1.76 0zM5.11 19.16h6.93V8.8h3.47v10.36h3.47V5.34H5.13v13.82z"></path></svg></a></relayout-social-links></div><relayout-theme-toggle class="astro-6kgiinfj"><button type="button" aria-label="Toggle theme" title="Toggle theme" class="astro-6kgiinfj"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true" class="astro-6kgiinfj"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,16.37a86.4,86.4,0,0,1,16,3V212.67a86.4,86.4,0,0,1-16,3Zm32,9.26a87.81,87.81,0,0,1,16,10.54V195.83a87.81,87.81,0,0,1-16,10.54ZM40,128a88.11,88.11,0,0,1,80-87.63V215.63A88.11,88.11,0,0,1,40,128Zm160,50.54V77.46a87.82,87.82,0,0,1,0,101.08Z" class="astro-6kgiinfj"></path></svg></button></relayout-theme-toggle></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#layouts" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Layouts</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#column" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Column</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#row" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Row</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#grid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Grid</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#frame" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Frame</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#utilities" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Utilities</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#gap" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Gap</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#align" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Align</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#justify" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Justify</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#padding" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Padding</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#wrapping" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Wrapping</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#height-fill-and-scroll" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Height, fill and scroll</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#width" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Width</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sticky" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sticky</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#extras" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Extras</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#border" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Border</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#radius" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Radius</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#divider" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Divider</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#palette" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Palette</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#shadows" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Shadows</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#outline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Outline</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#custom-properties" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Custom properties</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#widths" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Widths</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#grid-cells" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Grid cells</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#font-families" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Font families</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#text-sizes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Text sizes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#shadows-1" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Shadows</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#defaults-and-limits" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Defaults and limits</span></a></li></ul></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/docs/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#layouts" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Layouts</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#column" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Column</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#row" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Row</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#grid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Grid</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#frame" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Frame</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#utilities" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Utilities</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#gap" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Gap</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#align" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Align</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#justify" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Justify</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#padding" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Padding</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#wrapping" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Wrapping</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#height-fill-and-scroll" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Height, fill and scroll</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#width" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Width</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sticky" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sticky</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#extras" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Extras</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#border" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Border</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#radius" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Radius</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#divider" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Divider</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#palette" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Palette</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#shadows" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Shadows</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#outline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Outline</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#custom-properties" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Custom properties</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#widths" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Widths</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#grid-cells" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Grid cells</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#font-families" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Font families</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#text-sizes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Text sizes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#shadows-1" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Shadows</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#defaults-and-limits" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Defaults and limits</span></a></li></ul></li></ul></nav></starlight-toc><script type="module" src="/docs/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">Reference</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>Every class and custom property of <code dir="auto">relayout.css</code> 0.8.0, the version the previews on these pages run. This page is built from that file when the docs are built, so it lists what ships, and a class that isn’t here doesn’t exist.</p>
+<p>A class is listed with the rules it sets, written as in the stylesheet, and the custom properties those rules read. A rule for a child, such as <code dir="auto">rl-width-fill</code> in a row, shows its selector. The page linked under each heading says when to use its classes. The one element, <a href="/docs/web-components/"><code dir="auto">rl-div</code></a>, takes the same classes.</p>
+<p>A custom property set on <code dir="auto">:root</code> changes the whole page, and one set on an element changes what is inside it.</p>
+<p>There are 144 classes and 51 custom properties.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="layouts">Layouts</h2><a class="sl-anchor-link" href="#layouts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Layouts”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="column">Column</h3><a class="sl-anchor-link" href="#column"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Column”</span></a></div>
+<p>See <a href="/docs/layouts/column/">Column</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-column</code></td>
+<td><code dir="auto">padding: var(--rl-padding-default, revert-layer)</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">display: flex; flex-direction: column; align-items: stretch; justify-content: start; gap: var(--rl-gap-default)</code><br><code dir="auto">.rl-column&gt;* { flex-shrink: 0 }</code><br><code dir="auto">.rl-column[hidden]:not([hidden=until-found i]) { display: none }</code></td>
+<td><code dir="auto">--rl-gap-default</code>, <code dir="auto">--rl-padding-default</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="row">Row</h3><a class="sl-anchor-link" href="#row"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Row”</span></a></div>
+<p>See <a href="/docs/layouts/row/">Row</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-row</code></td>
+<td><code dir="auto">padding: var(--rl-padding-default, revert-layer)</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">display: flex; flex-direction: row; align-items: center; justify-content: start; flex-wrap: wrap; gap: var(--rl-gap-default)</code><br><code dir="auto">.rl-row[hidden]:not([hidden=until-found i]) { display: none }</code></td>
+<td><code dir="auto">--rl-gap-default</code>, <code dir="auto">--rl-padding-default</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="grid">Grid</h3><a class="sl-anchor-link" href="#grid"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Grid”</span></a></div>
+<p>See <a href="/docs/layouts/grid/">Grid</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-grid</code></td>
+<td><code dir="auto">padding: var(--rl-padding-default, revert-layer)</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">display: grid; grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-s), 100%), 1fr)); gap: var(--rl-gap-default)</code><br><code dir="auto">.rl-grid[hidden]:not([hidden=until-found i]) { display: none }</code></td>
+<td><code dir="auto">--rl-grid-s</code>, <code dir="auto">--rl-gap-default</code>, <code dir="auto">--rl-padding-default</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-xs</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-xs), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-s</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-s), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-m</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-m), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-l</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-l), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-xl</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-xl), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fit-2xl</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fit, minmax(min(var(--rl-grid-2xl), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-xs</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-xs), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-s</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-s), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-m</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-m), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-l</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-l), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-xl</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-xl), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-grid-fill-2xl</code></td>
+<td><code dir="auto">grid-template-columns: repeat(auto-fill, minmax(min(var(--rl-grid-2xl), 100%), 1fr))</code></td>
+<td><code dir="auto">--rl-grid-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="frame">Frame</h3><a class="sl-anchor-link" href="#frame"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Frame”</span></a></div>
+<p>See <a href="/docs/layouts/frame/">Frame</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-frame</code></td>
+<td><code dir="auto">padding: var(--rl-padding-default, revert-layer)</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">display: flex; align-items: center; justify-content: space-around; width: 100%; height: 100%; overflow: visible</code><br><code dir="auto">.rl-frame&gt;* { max-height: 100% }</code><br><code dir="auto">.rl-frame&gt;:where(:not(.rl-width-xs,.rl-width-s,.rl-width-m,.rl-width-l,.rl-width-xl,.rl-width-2xl)) { max-width: 100% }</code><br><code dir="auto">.rl-frame&gt;img[hidden]:not([hidden=until-found i]) { display: none }</code><br><code dir="auto">.rl-frame&gt;img { display: block; width: auto; height: auto; object-fit: contain }</code><br><code dir="auto">.rl-frame[hidden]:not([hidden=until-found i]) { display: none }</code></td>
+<td><code dir="auto">--rl-padding-default</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h2"><h2 id="utilities">Utilities</h2><a class="sl-anchor-link" href="#utilities"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Utilities”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="gap">Gap</h3><a class="sl-anchor-link" href="#gap"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Gap”</span></a></div>
+<p>See <a href="/docs/utilities/gap/">Gap</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-gap-0</code></td>
+<td><code dir="auto">gap: var(--rl-space-0)</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-xs</code></td>
+<td><code dir="auto">gap: var(--rl-space-xs)</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-s</code></td>
+<td><code dir="auto">gap: var(--rl-space-s)</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-m</code></td>
+<td><code dir="auto">gap: var(--rl-space-m)</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-l</code></td>
+<td><code dir="auto">gap: var(--rl-space-l)</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-xl</code></td>
+<td><code dir="auto">gap: var(--rl-space-xl)</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-2xl</code></td>
+<td><code dir="auto">gap: var(--rl-space-2xl)</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-0</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-0 { row-gap: var(--rl-space-0) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-0 { row-gap: var(--rl-space-0) }</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-xs</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-xs { row-gap: var(--rl-space-xs) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-xs { row-gap: var(--rl-space-xs) }</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-s</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-s { row-gap: var(--rl-space-s) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-s { row-gap: var(--rl-space-s) }</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-m</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-m { row-gap: var(--rl-space-m) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-m { row-gap: var(--rl-space-m) }</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-l</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-l { row-gap: var(--rl-space-l) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-l { row-gap: var(--rl-space-l) }</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-xl</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-xl { row-gap: var(--rl-space-xl) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-xl { row-gap: var(--rl-space-xl) }</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-gap-wrap-2xl</code></td>
+<td><code dir="auto">.rl-row.rl-gap-wrap-2xl { row-gap: var(--rl-space-2xl) }</code><br><code dir="auto">.rl-grid.rl-gap-wrap-2xl { row-gap: var(--rl-space-2xl) }</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="align">Align</h3><a class="sl-anchor-link" href="#align"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Align”</span></a></div>
+<p>See <a href="/docs/utilities/align/">Align</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-align-start</code></td>
+<td><code dir="auto">.rl-column.rl-align-start { text-align: start }</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">align-items: start</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-align-center</code></td>
+<td><code dir="auto">.rl-column.rl-align-center { text-align: center }</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">align-items: center</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-align-end</code></td>
+<td><code dir="auto">.rl-column.rl-align-end { text-align: end }</code> in the <code dir="auto">rl-defaults</code> layer<br><code dir="auto">align-items: end</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-align-stretch</code></td>
+<td><code dir="auto">align-items: stretch</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-align-baseline</code></td>
+<td><code dir="auto">align-items: baseline</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="justify">Justify</h3><a class="sl-anchor-link" href="#justify"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Justify”</span></a></div>
+<p>See <a href="/docs/utilities/justify/">Justify</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-justify-start</code></td>
+<td><code dir="auto">justify-content: start</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-justify-center</code></td>
+<td><code dir="auto">justify-content: center</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-justify-end</code></td>
+<td><code dir="auto">justify-content: end</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-justify-between</code></td>
+<td><code dir="auto">justify-content: space-between</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="padding">Padding</h3><a class="sl-anchor-link" href="#padding"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Padding”</span></a></div>
+<p>See <a href="/docs/utilities/padding/">Padding</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-padding-0</code></td>
+<td><code dir="auto">padding: var(--rl-space-0)</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-xs</code></td>
+<td><code dir="auto">padding: var(--rl-space-xs)</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-s</code></td>
+<td><code dir="auto">padding: var(--rl-space-s)</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-m</code></td>
+<td><code dir="auto">padding: var(--rl-space-m)</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-l</code></td>
+<td><code dir="auto">padding: var(--rl-space-l)</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-xl</code></td>
+<td><code dir="auto">padding: var(--rl-space-xl)</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-2xl</code></td>
+<td><code dir="auto">padding: var(--rl-space-2xl)</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-0</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-0)</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-xs</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-xs)</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-s</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-s)</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-m</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-m)</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-l</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-l)</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-xl</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-xl)</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-x-2xl</code></td>
+<td><code dir="auto">padding-inline: var(--rl-space-2xl)</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-0</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-0)</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-xs</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-xs)</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-s</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-s)</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-m</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-m)</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-l</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-l)</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-xl</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-xl)</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-padding-y-2xl</code></td>
+<td><code dir="auto">padding-block: var(--rl-space-2xl)</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="wrapping">Wrapping</h3><a class="sl-anchor-link" href="#wrapping"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Wrapping”</span></a></div>
+<p>See <a href="/docs/utilities/wrapping/">Wrapping</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-nowrap-scroll</code></td>
+<td><code dir="auto">.rl-nowrap-scroll[hidden]:not([hidden=until-found i]) { display: none }</code><br><code dir="auto">display: flex; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden</code><br><code dir="auto">.rl-nowrap-scroll&gt;* { flex: 0 0 auto }</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-nowrap</code></td>
+<td><code dir="auto">flex-wrap: nowrap</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-wrap-reverse</code></td>
+<td><code dir="auto">flex-wrap: wrap-reverse</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="height-fill-and-scroll">Height, fill and scroll</h3><a class="sl-anchor-link" href="#height-fill-and-scroll"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Height, fill and scroll”</span></a></div>
+<p>See <a href="/docs/utilities/height/">Height, fill and scroll</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-height-fill</code></td>
+<td><code dir="auto">.rl-column&gt;.rl-height-fill { flex: 999 1 auto; min-height: 0 }</code><br><code dir="auto">.rl-row&gt;.rl-height-fill { align-self: stretch; height: auto }</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-fill</code></td>
+<td><code dir="auto">.rl-column&gt;.rl-width-fill { align-self: stretch; width: auto }</code><br><code dir="auto">.rl-row&gt;.rl-width-fill { flex: 999 1 0; min-width: min(100%,var(--rl-fill-min)) }</code><br><code dir="auto">.rl-row.rl-nowrap-scroll&gt;.rl-width-fill { min-width: auto }</code><br><code dir="auto">.rl-row.rl-nowrap&gt;.rl-width-fill { min-width: 0 }</code></td>
+<td><code dir="auto">--rl-fill-min</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-height-full</code></td>
+<td><code dir="auto">height: 100%</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-height-screen</code></td>
+<td><code dir="auto">height: 100dvh</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-height-screen-min</code></td>
+<td><code dir="auto">min-height: 100dvh</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-scroll</code></td>
+<td><code dir="auto">overflow: auto</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="width">Width</h3><a class="sl-anchor-link" href="#width"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Width”</span></a></div>
+<p>See <a href="/docs/utilities/width/">Width</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-width-xs</code></td>
+<td><code dir="auto">max-width: var(--rl-width-xs); width: 100%</code></td>
+<td><code dir="auto">--rl-width-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-s</code></td>
+<td><code dir="auto">max-width: var(--rl-width-s); width: 100%</code></td>
+<td><code dir="auto">--rl-width-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-m</code></td>
+<td><code dir="auto">max-width: var(--rl-width-m); width: 100%</code></td>
+<td><code dir="auto">--rl-width-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-l</code></td>
+<td><code dir="auto">max-width: var(--rl-width-l); width: 100%</code></td>
+<td><code dir="auto">--rl-width-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-xl</code></td>
+<td><code dir="auto">max-width: var(--rl-width-xl); width: 100%</code></td>
+<td><code dir="auto">--rl-width-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-width-2xl</code></td>
+<td><code dir="auto">max-width: var(--rl-width-2xl); width: 100%</code></td>
+<td><code dir="auto">--rl-width-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-center-self</code></td>
+<td><code dir="auto">margin-inline: auto</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="sticky">Sticky</h3><a class="sl-anchor-link" href="#sticky"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Sticky”</span></a></div>
+<p>See <a href="/docs/utilities/sticky/">Sticky</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-sticky-top</code></td>
+<td><code dir="auto">position: sticky; top: 0; z-index: 1</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h2"><h2 id="extras">Extras</h2><a class="sl-anchor-link" href="#extras"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Extras”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="border">Border</h3><a class="sl-anchor-link" href="#border"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Border”</span></a></div>
+<p>See <a href="/docs/extras/border/">Border</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-border</code></td>
+<td><code dir="auto">border: var(--rl-border-default)</code><br><code dir="auto">border-radius: var(--rl-radius-default)</code> in the <code dir="auto">rl-defaults</code> layer</td>
+<td><code dir="auto">--rl-radius-default</code>, <code dir="auto">--rl-border-default</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-border-top</code></td>
+<td><code dir="auto">border-top: var(--rl-border-default)</code></td>
+<td><code dir="auto">--rl-border-default</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-border-bottom</code></td>
+<td><code dir="auto">border-bottom: var(--rl-border-default)</code></td>
+<td><code dir="auto">--rl-border-default</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-border-start</code></td>
+<td><code dir="auto">border-inline-start: var(--rl-border-default)</code></td>
+<td><code dir="auto">--rl-border-default</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-border-end</code></td>
+<td><code dir="auto">border-inline-end: var(--rl-border-default)</code></td>
+<td><code dir="auto">--rl-border-default</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="radius">Radius</h3><a class="sl-anchor-link" href="#radius"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Radius”</span></a></div>
+<p>See <a href="/docs/extras/radius/">Radius</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-radius-0</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-0)</code></td>
+<td><code dir="auto">--rl-space-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-xs</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-xs)</code></td>
+<td><code dir="auto">--rl-space-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-s</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-s)</code></td>
+<td><code dir="auto">--rl-space-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-m</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-m)</code></td>
+<td><code dir="auto">--rl-space-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-l</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-l)</code></td>
+<td><code dir="auto">--rl-space-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-xl</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-xl)</code></td>
+<td><code dir="auto">--rl-space-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-2xl</code></td>
+<td><code dir="auto">border-radius: var(--rl-space-2xl)</code></td>
+<td><code dir="auto">--rl-space-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-radius-full</code></td>
+<td><code dir="auto">border-radius: 9999px</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="divider">Divider</h3><a class="sl-anchor-link" href="#divider"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Divider”</span></a></div>
+<p>See <a href="/docs/extras/divider/">Divider</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-divider</code></td>
+<td><code dir="auto">.rl-row&gt;.rl-divider { width: 0; height: auto; min-height: 100%; border-top: none; border-left: var(--rl-border-default) }</code><br><code dir="auto">align-self: stretch; border: none; margin: 0; width: 100%; height: 0; border-top: var(--rl-border-default)</code></td>
+<td><code dir="auto">--rl-border-default</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="palette">Palette</h3><a class="sl-anchor-link" href="#palette"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Palette”</span></a></div>
+<p>See <a href="/docs/extras/palette/">Palette</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-bg-primary</code></td>
+<td><code dir="auto">background-color: var(--rl-color-primary); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-primary</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-accent</code></td>
+<td><code dir="auto">background-color: var(--rl-color-accent); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-accent</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-success</code></td>
+<td><code dir="auto">background-color: var(--rl-color-success); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-success</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-warning</code></td>
+<td><code dir="auto">background-color: var(--rl-color-warning); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-warning</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-danger</code></td>
+<td><code dir="auto">background-color: var(--rl-color-danger); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-danger</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-info</code></td>
+<td><code dir="auto">background-color: var(--rl-color-info); color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-info</code>, <code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-surface</code></td>
+<td><code dir="auto">background-color: var(--rl-color-surface)</code></td>
+<td><code dir="auto">--rl-color-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-bg-surface-alt</code></td>
+<td><code dir="auto">background-color: var(--rl-color-surface-alt)</code></td>
+<td><code dir="auto">--rl-color-surface-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-primary</code></td>
+<td><code dir="auto">color: var(--rl-color-primary)</code></td>
+<td><code dir="auto">--rl-color-primary</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-muted</code></td>
+<td><code dir="auto">color: var(--rl-color-muted)</code></td>
+<td><code dir="auto">--rl-color-muted</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-accent</code></td>
+<td><code dir="auto">color: var(--rl-color-accent)</code></td>
+<td><code dir="auto">--rl-color-accent</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-success</code></td>
+<td><code dir="auto">color: var(--rl-color-success)</code></td>
+<td><code dir="auto">--rl-color-success</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-warning</code></td>
+<td><code dir="auto">color: var(--rl-color-warning)</code></td>
+<td><code dir="auto">--rl-color-warning</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-danger</code></td>
+<td><code dir="auto">color: var(--rl-color-danger)</code></td>
+<td><code dir="auto">--rl-color-danger</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-color-info</code></td>
+<td><code dir="auto">color: var(--rl-color-info)</code></td>
+<td><code dir="auto">--rl-color-info</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="fonts">Fonts</h3><a class="sl-anchor-link" href="#fonts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Fonts”</span></a></div>
+<p>See <a href="/docs/extras/fonts/">Fonts</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-font-sans</code></td>
+<td><code dir="auto">font-family: var(--rl-font-sans)</code></td>
+<td><code dir="auto">--rl-font-sans</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-serif</code></td>
+<td><code dir="auto">font-family: var(--rl-font-serif)</code></td>
+<td><code dir="auto">--rl-font-serif</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-mono</code></td>
+<td><code dir="auto">font-family: var(--rl-font-mono)</code></td>
+<td><code dir="auto">--rl-font-mono</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-sans-alt</code></td>
+<td><code dir="auto">font-family: var(--rl-font-sans-alt)</code></td>
+<td><code dir="auto">--rl-font-sans-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-serif-alt</code></td>
+<td><code dir="auto">font-family: var(--rl-font-serif-alt)</code></td>
+<td><code dir="auto">--rl-font-serif-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-mono-alt</code></td>
+<td><code dir="auto">font-family: var(--rl-font-mono-alt)</code></td>
+<td><code dir="auto">--rl-font-mono-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-bold</code></td>
+<td><code dir="auto">font-weight: 700</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-medium</code></td>
+<td><code dir="auto">font-weight: 500</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-font-regular</code></td>
+<td><code dir="auto">font-weight: 400</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-xs</code></td>
+<td><code dir="auto">font-size: var(--rl-text-xs)</code></td>
+<td><code dir="auto">--rl-text-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-s</code></td>
+<td><code dir="auto">font-size: var(--rl-text-s)</code></td>
+<td><code dir="auto">--rl-text-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-m</code></td>
+<td><code dir="auto">font-size: var(--rl-text-m)</code></td>
+<td><code dir="auto">--rl-text-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-l</code></td>
+<td><code dir="auto">font-size: var(--rl-text-l)</code></td>
+<td><code dir="auto">--rl-text-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-xl</code></td>
+<td><code dir="auto">font-size: var(--rl-text-xl)</code></td>
+<td><code dir="auto">--rl-text-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-2xl</code></td>
+<td><code dir="auto">font-size: var(--rl-text-2xl)</code></td>
+<td><code dir="auto">--rl-text-2xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-italic</code></td>
+<td><code dir="auto">font-style: italic</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-underline</code></td>
+<td><code dir="auto">text-decoration: underline</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-strike</code></td>
+<td><code dir="auto">text-decoration: line-through</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-start</code></td>
+<td><code dir="auto">text-align: start</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-center</code></td>
+<td><code dir="auto">text-align: center</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-end</code></td>
+<td><code dir="auto">text-align: end</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-uppercase</code></td>
+<td><code dir="auto">text-transform: uppercase</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-lowercase</code></td>
+<td><code dir="auto">text-transform: lowercase</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-capitalize</code></td>
+<td><code dir="auto">text-transform: capitalize</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-textline-tight</code></td>
+<td><code dir="auto">line-height: 1.25</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-textline-normal</code></td>
+<td><code dir="auto">line-height: 1.5</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-textline-loose</code></td>
+<td><code dir="auto">line-height: 2</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-wrap</code></td>
+<td><code dir="auto">white-space: normal</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-nowrap</code></td>
+<td><code dir="auto">white-space: nowrap</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-text-truncate</code></td>
+<td><code dir="auto">overflow: hidden; white-space: nowrap; text-overflow: ellipsis</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="shadows">Shadows</h3><a class="sl-anchor-link" href="#shadows"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Shadows”</span></a></div>
+<p>See <a href="/docs/extras/shadows/">Shadows</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-shadow-xs</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-xs)</code></td>
+<td><code dir="auto">--rl-shadow-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-s</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-s)</code></td>
+<td><code dir="auto">--rl-shadow-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-m</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-m)</code></td>
+<td><code dir="auto">--rl-shadow-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-l</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-l)</code></td>
+<td><code dir="auto">--rl-shadow-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-xl</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-xl)</code></td>
+<td><code dir="auto">--rl-shadow-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-none</code></td>
+<td><code dir="auto">box-shadow: none</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code dir="auto">rl-shadow-inner</code></td>
+<td><code dir="auto">box-shadow: var(--rl-shadow-inner)</code></td>
+<td><code dir="auto">--rl-shadow-inner</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="outline">Outline</h3><a class="sl-anchor-link" href="#outline"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Outline”</span></a></div>
+<p>See <a href="/docs/extras/outline/">Outline</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it sets</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">rl-outline-none</code></td>
+<td><code dir="auto">outline: none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h2"><h2 id="custom-properties">Custom properties</h2><a class="sl-anchor-link" href="#custom-properties"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Custom properties”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="spacing">Spacing</h3><a class="sl-anchor-link" href="#spacing"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Spacing”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-space-0</code></td>
+<td><code dir="auto">0</code></td>
+<td><code dir="auto">rl-gap-0</code>, <code dir="auto">rl-gap-wrap-0</code>, <code dir="auto">rl-padding-0</code>, <code dir="auto">rl-padding-x-0</code>, <code dir="auto">rl-padding-y-0</code>, <code dir="auto">rl-radius-0</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-xs</code></td>
+<td><code dir="auto">0.125rem</code></td>
+<td><code dir="auto">rl-gap-xs</code>, <code dir="auto">rl-gap-wrap-xs</code>, <code dir="auto">rl-padding-xs</code>, <code dir="auto">rl-padding-x-xs</code>, <code dir="auto">rl-padding-y-xs</code>, <code dir="auto">rl-radius-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-s</code></td>
+<td><code dir="auto">0.25rem</code></td>
+<td><code dir="auto">rl-gap-s</code>, <code dir="auto">rl-gap-wrap-s</code>, <code dir="auto">rl-padding-s</code>, <code dir="auto">rl-padding-x-s</code>, <code dir="auto">rl-padding-y-s</code>, <code dir="auto">rl-radius-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-m</code></td>
+<td><code dir="auto">0.5rem</code></td>
+<td><code dir="auto">rl-gap-m</code>, <code dir="auto">rl-gap-wrap-m</code>, <code dir="auto">rl-padding-m</code>, <code dir="auto">rl-padding-x-m</code>, <code dir="auto">rl-padding-y-m</code>, <code dir="auto">rl-radius-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-l</code></td>
+<td><code dir="auto">1rem</code></td>
+<td><code dir="auto">rl-gap-l</code>, <code dir="auto">rl-gap-wrap-l</code>, <code dir="auto">rl-padding-l</code>, <code dir="auto">rl-padding-x-l</code>, <code dir="auto">rl-padding-y-l</code>, <code dir="auto">rl-radius-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-xl</code></td>
+<td><code dir="auto">1.5rem</code></td>
+<td><code dir="auto">rl-gap-xl</code>, <code dir="auto">rl-gap-wrap-xl</code>, <code dir="auto">rl-padding-xl</code>, <code dir="auto">rl-padding-x-xl</code>, <code dir="auto">rl-padding-y-xl</code>, <code dir="auto">rl-radius-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-space-2xl</code></td>
+<td><code dir="auto">2.25rem</code></td>
+<td><code dir="auto">rl-gap-2xl</code>, <code dir="auto">rl-gap-wrap-2xl</code>, <code dir="auto">rl-padding-2xl</code>, <code dir="auto">rl-padding-x-2xl</code>, <code dir="auto">rl-padding-y-2xl</code>, <code dir="auto">rl-radius-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="widths">Widths</h3><a class="sl-anchor-link" href="#widths"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Widths”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-width-xs</code></td>
+<td><code dir="auto">20rem</code></td>
+<td><code dir="auto">rl-width-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-width-s</code></td>
+<td><code dir="auto">30rem</code></td>
+<td><code dir="auto">rl-width-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-width-m</code></td>
+<td><code dir="auto">40rem</code></td>
+<td><code dir="auto">rl-width-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-width-l</code></td>
+<td><code dir="auto">48rem</code></td>
+<td><code dir="auto">rl-width-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-width-xl</code></td>
+<td><code dir="auto">64rem</code></td>
+<td><code dir="auto">rl-width-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-width-2xl</code></td>
+<td><code dir="auto">80rem</code></td>
+<td><code dir="auto">rl-width-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="grid-cells">Grid cells</h3><a class="sl-anchor-link" href="#grid-cells"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Grid cells”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-grid-xs</code></td>
+<td><code dir="auto">3.125rem</code></td>
+<td><code dir="auto">rl-grid-fit-xs</code>, <code dir="auto">rl-grid-fill-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-grid-s</code></td>
+<td><code dir="auto">6.25rem</code></td>
+<td><code dir="auto">rl-grid</code>, <code dir="auto">rl-grid-fit-s</code>, <code dir="auto">rl-grid-fill-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-grid-m</code></td>
+<td><code dir="auto">9.375rem</code></td>
+<td><code dir="auto">rl-grid-fit-m</code>, <code dir="auto">rl-grid-fill-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-grid-l</code></td>
+<td><code dir="auto">12.5rem</code></td>
+<td><code dir="auto">rl-grid-fit-l</code>, <code dir="auto">rl-grid-fill-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-grid-xl</code></td>
+<td><code dir="auto">15.625rem</code></td>
+<td><code dir="auto">rl-grid-fit-xl</code>, <code dir="auto">rl-grid-fill-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-grid-2xl</code></td>
+<td><code dir="auto">20rem</code></td>
+<td><code dir="auto">rl-grid-fit-2xl</code>, <code dir="auto">rl-grid-fill-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="font-families">Font families</h3><a class="sl-anchor-link" href="#font-families"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Font families”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-font-sans</code></td>
+<td><code dir="auto">system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif</code></td>
+<td><code dir="auto">rl-font-sans</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-font-serif</code></td>
+<td><code dir="auto">Georgia, 'Times New Roman', Times, serif</code></td>
+<td><code dir="auto">rl-font-serif</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-font-mono</code></td>
+<td><code dir="auto">ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace</code></td>
+<td><code dir="auto">rl-font-mono</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-font-sans-alt</code></td>
+<td><code dir="auto">var(--rl-font-sans)</code></td>
+<td><code dir="auto">rl-font-sans-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-font-serif-alt</code></td>
+<td><code dir="auto">var(--rl-font-serif)</code></td>
+<td><code dir="auto">rl-font-serif-alt</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-font-mono-alt</code></td>
+<td><code dir="auto">var(--rl-font-mono)</code></td>
+<td><code dir="auto">rl-font-mono-alt</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="text-sizes">Text sizes</h3><a class="sl-anchor-link" href="#text-sizes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Text sizes”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-text-xs</code></td>
+<td><code dir="auto">0.625rem</code></td>
+<td><code dir="auto">rl-text-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-text-s</code></td>
+<td><code dir="auto">0.75rem</code></td>
+<td><code dir="auto">rl-text-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-text-m</code></td>
+<td><code dir="auto">0.875rem</code></td>
+<td><code dir="auto">rl-text-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-text-l</code></td>
+<td><code dir="auto">1rem</code></td>
+<td><code dir="auto">rl-text-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-text-xl</code></td>
+<td><code dir="auto">1.5rem</code></td>
+<td><code dir="auto">rl-text-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-text-2xl</code></td>
+<td><code dir="auto">2.25rem</code></td>
+<td><code dir="auto">rl-text-2xl</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="colors">Colors</h3><a class="sl-anchor-link" href="#colors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Colors”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Light</th>
+<th>Dark</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-color-primary</code></td>
+<td><code dir="auto">hsl(0, 0%, 10%)</code></td>
+<td><code dir="auto">hsl(0, 0%, 95%)</code></td>
+<td><code dir="auto">rl-bg-primary</code>, <code dir="auto">rl-color-primary</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-muted</code></td>
+<td><code dir="auto">hsl(0, 0%, 45%)</code></td>
+<td><code dir="auto">hsl(0, 0%, 65%)</code></td>
+<td><code dir="auto">rl-color-muted</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-accent</code></td>
+<td><code dir="auto">hsl(30, 90%, 50%)</code></td>
+<td><code dir="auto">hsl(30, 90%, 60%)</code></td>
+<td><code dir="auto">rl-bg-accent</code>, <code dir="auto">rl-color-accent</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-success</code></td>
+<td><code dir="auto">hsl(142, 60%, 35%)</code></td>
+<td><code dir="auto">hsl(142, 60%, 50%)</code></td>
+<td><code dir="auto">rl-bg-success</code>, <code dir="auto">rl-color-success</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-warning</code></td>
+<td><code dir="auto">hsl(38, 95%, 45%)</code></td>
+<td><code dir="auto">hsl(38, 95%, 60%)</code></td>
+<td><code dir="auto">rl-bg-warning</code>, <code dir="auto">rl-color-warning</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-danger</code></td>
+<td><code dir="auto">hsl(0, 70%, 50%)</code></td>
+<td><code dir="auto">hsl(0, 75%, 65%)</code></td>
+<td><code dir="auto">rl-bg-danger</code>, <code dir="auto">rl-color-danger</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-info</code></td>
+<td><code dir="auto">hsl(200, 75%, 45%)</code></td>
+<td><code dir="auto">hsl(200, 80%, 60%)</code></td>
+<td><code dir="auto">rl-bg-info</code>, <code dir="auto">rl-color-info</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-surface</code></td>
+<td><code dir="auto">hsl(0, 0%, 100%)</code></td>
+<td><code dir="auto">hsl(0, 0%, 12%)</code></td>
+<td><code dir="auto">rl-bg-primary</code>, <code dir="auto">rl-bg-accent</code>, <code dir="auto">rl-bg-success</code>, <code dir="auto">rl-bg-warning</code>, <code dir="auto">rl-bg-danger</code>, <code dir="auto">rl-bg-info</code>, <code dir="auto">rl-bg-surface</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-color-surface-alt</code></td>
+<td><code dir="auto">hsl(0, 0%, 96%)</code></td>
+<td><code dir="auto">hsl(0, 0%, 18%)</code></td>
+<td><code dir="auto">rl-bg-surface-alt</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="shadows-1">Shadows</h3><a class="sl-anchor-link" href="#shadows-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Shadows”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-shadow-xs</code></td>
+<td><code dir="auto">0 1px 2px hsl(0 0% 0% / 0.08)</code></td>
+<td><code dir="auto">rl-shadow-xs</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-shadow-s</code></td>
+<td><code dir="auto">0 1px 4px hsl(0 0% 0% / 0.12)</code></td>
+<td><code dir="auto">rl-shadow-s</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-shadow-m</code></td>
+<td><code dir="auto">0 2px 8px hsl(0 0% 0% / 0.16)</code></td>
+<td><code dir="auto">rl-shadow-m</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-shadow-l</code></td>
+<td><code dir="auto">0 4px 16px hsl(0 0% 0% / 0.20)</code></td>
+<td><code dir="auto">rl-shadow-l</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-shadow-xl</code></td>
+<td><code dir="auto">0 8px 32px hsl(0 0% 0% / 0.24)</code></td>
+<td><code dir="auto">rl-shadow-xl</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-shadow-inner</code></td>
+<td><code dir="auto">inset 0 1px 3px hsl(0 0% 0% / 0.12)</code></td>
+<td><code dir="auto">rl-shadow-inner</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="defaults-and-limits">Defaults and limits</h3><a class="sl-anchor-link" href="#defaults-and-limits"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Defaults and limits”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Read by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">--rl-gap-default</code></td>
+<td><code dir="auto">var(--rl-space-0)</code></td>
+<td><code dir="auto">rl-column</code>, <code dir="auto">rl-row</code>, <code dir="auto">rl-grid</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-radius-default</code></td>
+<td><code dir="auto">var(--rl-space-0)</code></td>
+<td><code dir="auto">rl-border</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-border-default</code></td>
+<td><code dir="auto">solid 1px hsl(0, 0%, 50%)</code></td>
+<td><code dir="auto">rl-divider</code>, <code dir="auto">rl-border</code>, <code dir="auto">rl-border-top</code>, <code dir="auto">rl-border-bottom</code>, <code dir="auto">rl-border-start</code>, <code dir="auto">rl-border-end</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-fill-min</code></td>
+<td><code dir="auto">16rem</code></td>
+<td><code dir="auto">rl-width-fill</code></td>
+</tr>
+<tr>
+<td><code dir="auto">--rl-padding-default</code></td>
+<td>not defined: the rule reads it with <code dir="auto">revert-layer</code> as its fallback</td>
+<td><code dir="auto">rl-column</code>, <code dir="auto">rl-row</code>, <code dir="auto">rl-grid</code>, <code dir="auto">rl-frame</code></td>
+</tr>
+</tbody>
+</table>
+</div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/docs/extras/outline/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Outline</span></span></a></div></footer></div></div></main></div></div></div></div><script type="module">var e=`.main-frame`;function t(){let t=document.querySelector(e);t&&!location.hash&&getComputedStyle(t).overflowY===`auto`&&(t.tabIndex=-1,t.focus({preventScroll:!0}))}var n;function r(e){let t=e.target instanceof Element?e.target.closest(`starlight-tabs [role="tab"]`):null;n=t?{tab:t,top:t.getBoundingClientRect().top}:void 0}function i(){if(!n)return;let{tab:t,top:r}=n;n=void 0;let i=t.getBoundingClientRect().top-r;i&&t.closest(e)?.scrollBy({top:i,behavior:`instant`})}for(let e of[`click`,`keydown`])document.addEventListener(e,r,!0),document.addEventListener(e,i);t();</script></body></html>
